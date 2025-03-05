@@ -27,7 +27,7 @@ A Model Context Protocol server that provides access to Valyu's knowledge retrie
 
 ```bash
 docker pull ghcr.io/tiovikram/valyu-mcp-server
-docker run -i --rm -e VALYU_API_KEY=your-api-key tiovikram/valyu-mcp-server
+docker run -i --rm -e VALYU_API_KEY=your-api-key ghcr.io/tiovikram/valyu-mcp-server
 ```
 
 ## Configuration
@@ -46,7 +46,7 @@ Add to your Claude settings:
 "mcpServers": {
   "valyu": {
     "command": "docker",
-    "args": ["run", "--rm", "-i", "-e", "VALYU_API_KEY", "tiovikram/valyu-mcp-server"],
+    "args": ["run", "--pull", "--rm", "-i", "-e", "VALYU_API_KEY", "ghcr.io/tiovikram/valyu-mcp-server"],
     "env": {
       "VALYU_API_KEY": "<your-valyu-api-key>"
     }
